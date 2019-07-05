@@ -14,7 +14,11 @@
 
 // CODE HERE...
 
-
+function callBinding(magicAnimals, updateAnimal, id){
+for(let i =0; i<magicAnimals.length; i++){
+    
+}
+}
 
 // *************
 // * PROBLEM 2 *

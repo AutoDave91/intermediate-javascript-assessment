@@ -45,6 +45,8 @@ function noWeakLink() {
   })
   // CODE HERE...
 
+    // .then(response =>{firstUser = response.data.user.firstUser; return response.data.user})
+    // .then(response =>{thirdUser = response.data.user.thirdUser; return response.data.user.tenthUser})
 }
 
 
@@ -75,7 +77,7 @@ function large() {
 }
 // CODE HERE...
 
-
+let boundToElephant = large.bind(elephant)
 
 // *************
 // * PROBLEM 3 *
@@ -89,7 +91,9 @@ function large() {
 
 // CODE HERE...
 
-
+function deathStar(par1, par2){
+  return par1 = par1.bind(par2)
+}
 
 // *************
 // * PROBLEM 4 *
@@ -104,7 +108,11 @@ function large() {
 
 // CODE HERE...
 
-
+function accountingOffice(assets){
+  return function closure(liabilities){
+    return assets + liabilities;
+  }
+}
 
 // *************
 // * PROBLEM 5 *
@@ -129,7 +137,14 @@ function large() {
 
 // CODE HERE...
 
-
+function forgetter(name){
+  return function rememberall(item){
+    let list = [];
+    list.push(item)
+    console.log(list)
+    return {name: name, remember: list}
+  }
+}
 
 // *************
 // * PROBLEM 6 *
@@ -156,3 +171,37 @@ function large() {
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+
+function frodo(par1, par2){
+  let Hunger = par1;
+  let Danger = par2;
+
+  return {
+    dinnerOverFire(){
+      if(Hunger > 24){
+        Hunger -= 25;
+      } else {
+        Hunger = 0
+      }
+      if(Danger < 61){
+        Danger += 40;
+      } else {
+        Danger = 100
+      }
+      return {hunger: Hunger, danger: Danger}
+    }
+    // hidingInBush(){
+    //   if(Hunger < 66){
+      //   Hunger += 35;
+      // } else {
+      //   Hunger = 100
+      // }
+      // if(Danger > 19){
+      //   Danger -= 20;
+      // } else {
+      //   Danger = 0
+      // }
+      // return {hunger: Hunger, danger: Danger}
+    // }
+  }
+}
